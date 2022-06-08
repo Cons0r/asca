@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+  username String @unique
+  token String @default(cuid()) @unique // This prevents users from setting their tokens to user ids, in case you have routes such as /u/:[id]
+  hash String
+  createdAt DateTime @default(now())
+  lastUpdate DateTime @updatedAt
+}

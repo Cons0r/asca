@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "johnpapa.vscode-peacock",
+        "svelte.svelte-vscode",
+        "ardenivanov.svelte-intellisense",
+        "bradlc.vscode-tailwindcss",
+        "austenc.tailwind-docs"
+    ]
+}
